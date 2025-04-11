@@ -1,5 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
-import localData from "../data/profiles.json"; // Dữ liệu tĩnh
+import { useEffect, useState, createContext } from "react";
 
 export const ProfileContext = createContext();
 
@@ -8,16 +7,20 @@ export const ProfileProvider = ({ children }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        // Sử dụng dữ liệu local thay vì gọi API
-        setProfiles(localData);
+        fetch("/data/profiles.json")
+            .then((res) => res.json())
+            .then((data) => {
+                setProfiles(data);
+            })
+            .catch((error) => {
+                console.error("Lỗi khi fetch JSON:", error);
+            });
     }, []);
 
-    const nextProfile = () => {
-        setCurrentIndex((prev) => (prev + 1) % profiles.length);
-    };
-
     return (
-        <ProfileContext.Provider value={{ profiles, currentIndex, nextProfile }}>
+        <ProfileContext.Provider
+            value={{ profiles, currentIndex, setCurrentIndex }}
+        >
             {children}
         </ProfileContext.Provider>
     );

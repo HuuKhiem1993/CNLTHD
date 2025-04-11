@@ -1,8 +1,7 @@
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ProfileProvider } from "./context/ProfileContext";
-import Home from "./pages/Home.jsx";
-import ProfilePage from "./pages/ProfilePage.jsx";
+import { ProfileProvider } from "./context/ProfileContext"; // ✅ Đúng đường dẫn
+import Home from "./pages/Home";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
     return (
@@ -10,7 +9,7 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/profile" element={<ProfilePage />} />
+                    <Route path="/profile/:id" element={<ProfilePage />} />
                 </Routes>
             </BrowserRouter>
         </ProfileProvider>

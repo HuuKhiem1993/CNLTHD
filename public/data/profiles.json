@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Thanh Hà",
+    "job": "Product Designer",
+    "location": "Việt Nam",
+    "email": "hello@jeremyrose.com",
+    "phone": "+1 123 0",
+    "address": "525 E 68th Street, NY 10651",
+    "website": "jeremyrose.com",
+    "birthday": "June 5, 1992",
+    "gender": "Male",
+    "rating": "8.6",
+    "skills": ["Branding", "UI/UX", "Web Design"],
+    "image": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe",
+    "avatar": "https://i.pravatar.cc/40",
+    "work": [
+      {
+        "place": "Spotify New York",
+        "type": "Primary",
+        "address": "170 William Street, New York, NY"
+      },
+      {
+        "place": "Metropolitan Museum",
+        "type": "Secondary",
+        "address": "525 E 68th Street, New York, NY"
+      }
+    ]
+  },
+  {
+    "name": "Trung Hiếu",
+    "job": "Product Designer",
+    "location": "Hà Nội",
+    "email": "hello@jeremyrose.com",
+    "phone": "+1 123 0",
+    "address": "525 E 68th Street, NY 10651",
+    "website": "jeremyrose.com",
+    "birthday": "June 5, 1992",
+    "gender": "Male",
+    "rating": "8.6",
+    "skills": ["Branding", "UI/UX", "Web Design"],
+    "image": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe",
+    "avatar": "https://i.pravatar.cc/40",
+    "work": [
+      {
+        "place": "Spotify New York",
+        "type": "Primary",
+        "address": "170 William Street, New York, NY"
+      },
+      {
+        "place": "Metropolitan Museum",
+        "type": "Secondary",
+        "address": "525 E 68th Street, New York, NY"
+      }
+    ]
+  },
+  {
+    "name": "Thanh Việt",
+    "job": "Product Designer",
+    "location": "Hà Nội",
+    "email": "hello@jeremyrose.com",
+    "phone": "+1 123 0",
+    "address": "525 E 68th Street, NY 10651",
+    "website": "jeremyrose.com",
+    "birthday": "June 5, 1992",
+    "gender": "Male",
+    "rating": "8.6",
+    "skills": ["Branding", "UI/UX", "Web Design"],
+    "image": "https://images.unsplash.com/photo-1502685104226-ee32379fefbe",
+    "avatar": "https://i.pravatar.cc/40",
+    "work": [
+      {
+        "place": "Spotify New York",
+        "type": "Primary",
+        "address": "170 William Street, New York, NY"
+      },
+      {
+        "place": "Metropolitan Museum",
+        "type": "Secondary",
+        "address": "525 E 68th Street, New York, NY"
+      }
+    ]
+  }
+]

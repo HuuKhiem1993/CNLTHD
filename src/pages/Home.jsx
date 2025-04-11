@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ProfileContext } from "../context/ProfileContext";
 
-function Home() {
+export default function Home() {
+    const { profiles } = useContext(ProfileContext);
+
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
-            <div className="text-center p-8 bg-white/10 rounded-xl shadow-lg backdrop-blur-md">
-                <h1 className="text-4xl font-bold mb-4">Chào mừng đến với</h1>
-                <h2 className="text-2xl font-semibold mb-6">Ứng dụng Xem Hồ Sơ</h2>
-                <Link
-                    to="/profile"
-                    className="bg-white text-indigo-700 px-6 py-3 rounded-lg shadow hover:bg-gray-100 transition"
-                >
-                    ➡️ Vào trang hồ sơ
-                </Link>
+        <div className="min-h-screen p-6 bg-blue-50">
+            <h1 className="text-3xl font-bold mb-4">Danh sách người dùng</h1>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {profiles.map((profile, index) => (
+                    <Link to={`/profile/${index}`} key={index}>
+                        <div className="bg-white rounded-xl shadow-md p-4 hover:shadow-xl transition">
+                            <img
+                                src={profile.avatar}
+                                alt={profile.name}
+                                className="w-16 h-16 rounded-full mb-2"
+                            />
+                            <h2 className="text-xl font-semibold">{profile.name}</h2>
+                            <p className="text-sm text-gray-600">{profile.job}</p>
+                        </div>
+                    </Link>
+                ))}
             </div>
         </div>
     );
 }
-
-export default Home;
