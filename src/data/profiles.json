@@ -1,0 +1,5 @@
+[
+  { "name": "Khiêm", "age": 22, "job": "Lập trình viên" },
+  { "name": "Minh", "age": 25, "job": "Thiết kế UI/UX" },
+  { "name": "Trang", "age": 30, "job": "Quản lý dự án" }
+]

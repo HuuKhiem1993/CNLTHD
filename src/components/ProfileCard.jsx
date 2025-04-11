@@ -1,14 +1,16 @@
-import React from 'react';
-import UserProfile from './UserProfile';
-import ChangeProfileButton from './ChangeProfileButton';
+import React from "react";
 
-function ProfileCard({ profile, onChange }) {
+function ProfileCard({ profile }) {
     return (
-        <div className="card">
-            <UserProfile name={profile.name} age={profile.age} job={profile.job} />
-            <ChangeProfileButton onClick={onChange} />
+        <div className="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md border border-gray-200">
+            <h2 className="text-2xl font-bold text-indigo-700 mb-4">📄 Hồ sơ người dùng</h2>
+            <div className="space-y-2 text-gray-700 text-lg">
+                <p><strong>Tên:</strong> {profile.name}</p>
+                <p><strong>Tuổi:</strong> {profile.age}</p>
+                <p><strong>Nghề nghiệp:</strong> {profile.job}</p>
+            </div>
         </div>
     );
 }
 
-export default ProfileCard;
+export default React.memo(ProfileCard);
