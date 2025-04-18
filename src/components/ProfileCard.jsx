@@ -1,11 +1,6 @@
 import React from "react";
-import { useContext } from "react";
-import { ProfileContext } from "../context/ProfileContext";
 
-function ProfileCard() {
-    const { profiles, currentIndex } = useContext(ProfileContext);
-    const profile = profiles[currentIndex];
-
+function ProfileCard({ profile }) {
     if (!profile) return <div className="text-center p-6">Đang tải dữ liệu...</div>;
 
     return (
@@ -20,10 +15,6 @@ function ProfileCard() {
                             placeholder="Search"
                             className="px-4 py-2 border rounded-xl text-sm"
                         />
-                        <button className="text-sm font-medium">Find people</button>
-                        <button className="text-sm font-medium relative">
-                            Messages <span className="text-xs bg-blue-500 text-white rounded-full px-2 ml-1">4</span>
-                        </button>
                         <button className="text-sm font-medium">My Contacts</button>
                         <img
                             src={profile.avatar}
@@ -35,7 +26,6 @@ function ProfileCard() {
 
                 {/* Profile section */}
                 <div className="flex flex-col lg:flex-row gap-6">
-                    {/* Left - Avatar and Info */}
                     <div className="flex-shrink-0">
                         <img
                             src={profile.image}
@@ -44,7 +34,6 @@ function ProfileCard() {
                         />
                     </div>
 
-                    {/* Right - Info */}
                     <div className="flex-1">
                         <div className="flex justify-between items-start">
                             <div>
@@ -66,15 +55,12 @@ function ProfileCard() {
                             </div>
                         </div>
 
-                        {/* Tabs */}
                         <div className="mt-4 border-b flex gap-6 text-sm font-medium">
                             <button className="pb-2 border-b-2 border-transparent hover:border-blue-500">Timeline</button>
                             <button className="pb-2 border-b-2 border-blue-500 text-blue-600">About</button>
                         </div>
 
-                        {/* About Content */}
                         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {/* Contact Info */}
                             <div>
                                 <h3 className="font-semibold text-gray-700 mb-2">Contact Information</h3>
                                 <p><span className="font-medium">Phone:</span> <a href={`tel:${profile.phone}`} className="text-blue-600">{profile.phone}</a></p>
@@ -83,7 +69,6 @@ function ProfileCard() {
                                 <p><span className="font-medium">Website:</span> <a href={`https://${profile.website}`} className="text-blue-600">{profile.website}</a></p>
                             </div>
 
-                            {/* Basic Info */}
                             <div>
                                 <h3 className="font-semibold text-gray-700 mb-2">Basic Information</h3>
                                 <p><span className="font-medium">Birthday:</span> {profile.birthday}</p>
@@ -93,7 +78,6 @@ function ProfileCard() {
                     </div>
                 </div>
 
-                {/* Work + Skills */}
                 <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <h3 className="font-semibold text-gray-700 mb-2">Work</h3>
@@ -106,8 +90,8 @@ function ProfileCard() {
                                             ? "bg-blue-100 text-blue-700"
                                             : "bg-gray-100 text-gray-600"
                                     }`}>
-                    {w.type}
-                  </span>
+                                        {w.type}
+                                    </span>
                                 </p>
                                 <p className="text-sm text-gray-500">{w.address}</p>
                             </div>
@@ -122,8 +106,8 @@ function ProfileCard() {
                                     key={idx}
                                     className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm"
                                 >
-                  {skill}
-                </span>
+                                    {skill}
+                                </span>
                             ))}
                         </div>
                     </div>
@@ -132,6 +116,5 @@ function ProfileCard() {
         </div>
     );
 }
-
 
 export default React.memo(ProfileCard);

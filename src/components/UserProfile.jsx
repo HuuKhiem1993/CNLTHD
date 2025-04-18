@@ -11,6 +11,7 @@ export default function UserProfile() {
 
     return (
         <div>
+            <p>1233333333333333333333333333333333333333333333333</p>
             <h2>{profile.name}</h2>
             <p>{profile.job}</p>
             <img src={profile.avatar} alt={profile.name} />
